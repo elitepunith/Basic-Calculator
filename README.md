@@ -1,18 +1,27 @@
-# Basic-Calculator
-just a basic Calculator using html , css and javascript 
+# Basic Calculator
 
+A simple calculator built using **HTML**, **CSS**, and **JavaScript** as a school project.
 
-# how to use 
+## Preview
+![Calculator Preview](assets/image.png)
 
-1. just clone the project from github 
-2. open "index.html" file 
-3. you are ready to use it 
+## Features
+- Addition, Subtraction, Multiplication, Division
+- Input validation (empty fields, divide by zero)
+- Clean and simple UI
 
-# Demo
+## How to Use
+1. Clone the project from GitHub
+2. Open `index.html` in your browser
+3. Enter two numbers and click any operation button
 
-for demo : https://basic-calculator-pi-ashy.vercel.app/
+## Demo
+Live demo: [Click here](https://basic-calculator-pi-ashy.vercel.app/)
 
+## Built With
+- HTML
+- CSS
+- JavaScript
 
-
-
-
+## Author
+Made by elitepunith
