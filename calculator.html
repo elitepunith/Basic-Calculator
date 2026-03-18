@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic Calculator</title>
+  <style>
+    body{
+      background-color: #fefefe;
+      font-family: Arial, sans-serif;
+    }
+
+    h2{
+      text-align:center;
+      color:#349dd1;
+      margin-top:30px;
+    }
+
+    #calcBox{
+      width: 320px;
+      margin: 20px auto;
+      background-color: white;
+      border: 2px solid #1a5276;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    input[type="text"]{
+      width: 90%;
+      padding: 6px;
+      margin: 6px 0;
+      font-size: 15px;
+    }
+
+    
+    button{
+      padding:8px 14px;
+      margin:5px 3px;
+      font-size:14px;
+      cursor:pointer;
+      background-color:#2b79a9;
+      color:white;
+      border:none;
+      border-radius:4px;
+    }
+
+    button:hover{
+      background-color: #2e86c1;
+    }
+
+    #result{
+      margin-top:12px;
+      font-size:16px;
+      color: green;
+      font-weight: bold;
+    }
+
+    #errMsg{
+      color:red;
+      font-size:13px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h2>Basic Calculator</h2>
+
+  <div id="calcBox">
+    <label>First Number:</label><br>
+    <input type="text" id="num1" placeholder="Enter number"><br>
+
+    <label>Second Number:</label><br>
+    <input type="text" id="num2" placeholder="Enter number"><br><br>
+
+    <button onclick="calculate('+')">Add</button>
+    <button onclick="calculate('-')">Subtract</button>
+    <button onclick="calculate('*')">Multiply</button>
+    <button onclick="calculate('/')">Divide</button>
+    <button onclick="clearAll()">Clear</button>
+
+    <p id="errMsg"></p>
+    <p id="result"></p>
+  </div>
+
+  <script>
+
+    function calculate(op) {
+      var a = document.getElementById("num1").value;
+      var b = document.getElementById("num2").value;
+      var ans;
+
+     
+      document.getElementById("errMsg").innerHTML = "";
+      document.getElementById("result").innerHTML = "";
+
+     
+      if(a == "" || b == ""){
+        document.getElementById("errMsg").innerHTML = "Please fill both fields!";
+        return;
+      }
+
+      a = parseFloat(a);
+      b = parseFloat(b);
+
+      
+      if(isNaN(a) || isNaN(b)){
+        document.getElementById("errMsg").innerHTML = "Only numbers allowed.";
+        return;
+      }
+
+      if(op == '+'){
+        ans = a + b;
+      }
+      else if(op == '-'){
+        ans = a - b;
+      }
+      else if(op == '*'){
+        ans = a * b;
+      }
+      else if(op == '/'){
+        if(b == 0){
+          document.getElementById("errMsg").innerHTML = "Can't divide by zero!";
+          return;
+        }
+        ans = a / b;
+      }
+
+      document.getElementById("result").innerHTML = "Answer: " + ans;
+    }
+
+  
+    function clearAll(){
+      document.getElementById("num1").value = "";
+      document.getElementById("num2").value = "";
+      document.getElementById("result").innerHTML = "";
+      document.getElementById("errMsg").innerHTML = "";
+    }
+
+  </script>
+
+</body>
+</html>
